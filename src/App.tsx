@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import AboutBitcoin from "./components/AboutBitcoin";
+import Hero from "./components/Hero";
+import Insight from "./components/Insight";
+import KoinX from "./components/KoinX";
+import Navbar from "./components/Navbar";
+import OthersCoin from "./components/OthersCoin";
+import Sentiments from "./components/Sentiments";
+import Team from "./components/Team";
+import Tokenomics from "./components/Tokenomics";
+import Trending from "./components/Trending";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="h-screen w-screen overflow-x-hidden bg-gray-200">
+      <Navbar />
+      <div className="grid sm:grid-cols-1 lg:grid-cols-3">
+        <div className="lg:col-span-2">
+          <Hero />
+          <Insight />
+          <Sentiments />
+          <AboutBitcoin />
+          <Tokenomics />
+          <Team />
+        </div>
+        <div className="lg:col-span-1">
+          <KoinX />
+          <Trending />
+        </div>
+        <div className="lg:col-span-3">
+          <OthersCoin />
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    </div>
+  );
+};
 
-export default App
+export default App;
